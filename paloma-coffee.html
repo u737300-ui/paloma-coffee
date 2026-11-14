@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f5ef">
+  <meta name="description" content="Paloma Coffee Co. — your neighbourhood coffee and bakery in Windermere, Florida. Coffee, espresso, tea and freshly baked goods. Now serving Haan Coffee.">
+  <title>Paloma Coffee Co. | A Little Moment of Calm</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f8f5ef;
+      --cream-dark: #eee8dc;
+      --terracotta: #b86e53;
+      --terracotta-dark: #98563f;
+      --brown: #493c32;
+      --brown-light: #796b5e;
+      --white: #fffefa;
+      --sage: #a8a992;
+      --border: rgba(73,60,50,.13);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: var(--sans);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--terracotta);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: 1.18;
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: var(--brown-light);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 25px;
+      border: 1px solid var(--terracotta);
+      background: var(--terracotta);
+      color: white;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .5px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .btn:hover {
+      background: var(--terracotta-dark);
+      border-color: var(--terracotta-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--brown);
+      border-color: var(--brown-light);
+    }
+
+    .btn-outline:hover {
+      background: var(--brown);
+      color: white;
+      border-color: var(--brown);
+    }
+
+    /* HEADER */
+
+    header {
+      height: 82px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(248,245,239,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .logo-mark {
+      width: 39px;
+      height: 39px;
+      border: 1px solid var(--terracotta);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--terracotta);
+      font-family: var(--serif);
+      font-size: 1.3rem;
+    }
+
+    .logo-text {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      letter-spacing: .5px;
+      line-height: 1.2;
+    }
+
+    .logo-text small {
+      display: block;
+      font-family: var(--sans);
+      font-size: .55rem;
+      letter-spacing: 3px;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--brown-light);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: .79rem;
+      color: var(--brown-light);
+    }
+
+    .nav-links a:not(.btn):hover {
+      color: var(--terracotta);
+    }
+
+    .nav .btn {
+      padding: 10px 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--brown);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0 0 0 42%;
+      background:
+        linear-gradient(90deg, var(--cream-dark) 0%, rgba(238,232,220,.25) 40%, rgba(238,232,220,.05) 100%),
+        url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1800&q=85') center/cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 100px 0;
+    }
+
+    .hero-copy {
+      max-width: 550px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 7.5vw, 6.8rem);
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--terracotta);
+      font-style: italic;
+    }
+
+    .hero-copy > p {
+      max-width: 390px;
+      font-size: 1rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-address {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .82rem;
+      color: var(--brown);
+      margin-bottom: 32px;
+    }
+
+    .hero-address span {
+      color: var(--terracotta);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      margin-top: 25px;
+      font-size: .68rem;
+      color: var(--brown-light);
+      max-width: 390px;
+      opacity: .85;
+    }
+
+    /* INTRO STRIP */
+
+    .intro-strip {
+      padding: 27px 0;
+      background: var(--terracotta);
+      color: white;
+    }
+
+    .intro-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .intro-inner p {
+      color: white;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+    }
+
+    .rating {
+      font-size: .82rem;
+      letter-spacing: 1px;
+    }
+
+    .rating strong {
+      font-size: 1rem;
+    }
+
+    /* MENU */
+
+    .menu-section {
+      padding: 110px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 60px;
+    }
+
+    .section-heading p {
+      font-size: .92rem;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 34px 25px;
+      transition: .3s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(73,60,50,.07);
+    }
+
+    .menu-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      display: grid;
+      place-items: center;
+      color: var(--terracotta);
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+    }
+
+    .menu-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 15px;
+    }
+
+    .menu-card ul {
+      list-style: none;
+    }
+
+    .menu-card li {
+      font-size: .8rem;
+      color: var(--brown-light);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .menu-card li:last-child {
+      border: none;
+    }
+
+    .example-note {
+      text-align: center;
+      font-size: .72rem;
+      margin-top: 28px;
+      color: var(--brown-light);
+      font-style: italic;
+    }
+
+    /* COFFEE STORY */
+
+    .story-section {
+      padding: 100px 0;
+      background: #e9e5d9;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 85px;
+      align-items: center;
+    }
+
+    .story-photo {
+      position: relative;
+      height: 530px;
+    }
+
+    .story-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-label {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background: rgba(255,254,250,.92);
+      padding: 7px 12px;
+      font-size: .65rem;
+      color: var(--brown-light);
+    }
+
+    .story-copy h2 {
+      max-width: 480px;
+    }
+
+    .story-copy > p {
+      margin-bottom: 20px;
+      font-size: .93rem;
+    }
+
+    .roaster-tag {
+      display: inline-block;
+      background: var(--white);
+      padding: 15px 20px;
+      margin: 12px 0 25px;
+      border-left: 3px solid var(--terracotta);
+    }
+
+    .roaster-tag span {
+      display: block;
+      font-size: .65rem;
+      letter-spacing: 2px;
+      color: var(--brown-light);
+      text-transform: uppercase;
+    }
+
+    .roaster-tag strong {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    /* COMMUNITY */
+
+    .community-section {
+      padding: 110px 0;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .community-copy p {
+      font-size: .94rem;
+      margin-bottom: 18px;
+    }
+
+    .community-photo {
+      height: 440px;
+      position: relative;
+    }
+
+    .community-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .community-photo::before {
+      content: "";
+      position: absolute;
+      top: -17px;
+      right: -17px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--terracotta);
+      z-index: -1;
+    }
+
+    /* QUOTE */
+
+    .quote-section {
+      background: var(--brown);
+      padding: 85px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .quote-section p {
+      max-width: 720px;
+      margin: auto;
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      line-height: 1.4;
+      color: var(--cream);
+    }
+
+    .quote-section span {
+      display: block;
+      color: #d6a18a;
+      font-size: .7rem;
+      letter-spacing: 3px;
+      margin-top: 25px;
+      text-transform: uppercase;
+    }
+
+    /* LOCATION */
+
+    .location-section {
+      padding: 110px 0;
+      background: var(--cream-dark);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .location-card {
+      background: var(--white);
+      padding: 45px;
+      border: 1px solid var(--border);
+    }
+
+    .location-card h3 {
+      font-size: 1.65rem;
+      margin-bottom: 20px;
+    }
+
+    .location-line {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .85rem;
+    }
+
+    .location-line:last-of-type {
+      border: none;
+    }
+
+    .location-line strong {
+      display: block;
+      font-size: .69rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+    }
+
+    .map-placeholder {
+      height: 370px;
+      overflow: hidden;
+      background: #ded8ca;
+      position: relative;
+    }
+
+    .map-placeholder iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(1) sepia(.2);
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      padding: 110px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 90px;
+    }
+
+    .contact-copy > p {
+      font-size: .92rem;
+      margin-bottom: 27px;
+    }
+
+    .contact-detail {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .85rem;
+    }
+
+    .contact-detail strong {
+      display: block;
+      color: var(--terracotta);
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px;
+    }
+
+    .contact-detail a:hover {
+      color: var(--terracotta);
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #536f55;
+      color: white;
+      padding: 13px 21px;
+      margin-top: 25px;
+      border-radius: 3px;
+      font-size: .8rem;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .whatsapp-btn:hover {
+      background: #405941;
+      transform: translateY(-2px);
+    }
+
+    .contact-form {
+      background: var(--white);
+      padding: 42px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-form h3 {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-form > p {
+      font-size: .8rem;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .75rem;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid var(--border);
+      outline: none;
+      background: var(--cream);
+      color: var(--brown);
+      border-radius: 2px;
+      font-size: .85rem;
+      transition: border .2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--terracotta);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+    }
+
+    .form-note {
+      font-size: .68rem;
+      margin-top: 13px;
+      text-align: center;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #382e27;
+      padding: 55px 0 25px;
+      color: var(--cream);
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding-bottom: 40px;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+    }
+
+    .footer-logo small {
+      display: block;
+      font-family: var(--sans);
+      font-size: .58rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c3b5a7;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: .76rem;
+      color: #c3b5a7;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.13);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: .7rem;
+      color: #b5a99e;
+    }
+
+    .footer-bottom p {
+      color: #b5a99e;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .story-grid,
+      .community-grid,
+      .location-grid {
+        gap: 45px;
+      }
+
+      .contact-grid {
+        gap: 40px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      header {
+        height: 72px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        padding: 25px 5%;
+        background: var(--cream);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links .btn {
+        align-self: flex-start;
+      }
+
+      .hero {
+        min-height: 660px;
+        align-items: flex-end;
+      }
+
+      .hero-image {
+        inset: 0;
+        background:
+          linear-gradient(0deg, rgba(238,232,220,1) 0%, rgba(238,232,220,.9) 36%, rgba(238,232,220,.12) 100%),
+          url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=85') center/cover;
+      }
+
+      .hero-content {
+        padding: 90px 0 65px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.5rem, 15vw, 5rem);
+        letter-spacing: -2px;
+      }
+
+      .intro-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .menu-section,
+      .story-section,
+      .community-section,
+      .location-section,
+      .contact-section {
+        padding: 75px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 38px;
+      }
+
+      .menu-grid {
+        gap: 12px;
+      }
+
+      .menu-card {
+        padding: 25px 17px;
+      }
+
+      .menu-card h3 {
+        font-size: 1.15rem;
+      }
+
+      .story-grid,
+      .community-grid,
+      .location-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .story-photo {
+        height: 380px;
+      }
+
+      .community-photo {
+        height: 330px;
+        margin-right: 15px;
+      }
+
+      .location-card {
+        padding: 30px;
+      }
+
+      .map-placeholder {
+        height: 300px;
+      }
+
+      .contact-form {
+        padding: 28px 22px;
+      }
+
+      .footer-main {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo" aria-label="Paloma Coffee Co. home">
+        <div class="logo-mark">P</div>
+        <div class="logo-text">
+          Paloma Coffee Co.
+          <small>Coffee · Community · Comfort</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#menu">Our Menu</a>
+        <a href="#story">Our Coffee</a>
+        <a href="#community">Our Story</a>
+        <a href="#location">Find Us</a>
+        <a href="#contact" class="btn">Visit Us ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-image" role="img" aria-label="Illustrative placeholder photograph of a peaceful coffee shop"></div>
+
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">A neighbourhood café in Windermere</span>
+          <h1>Make room for <span>a little</span> slow.</h1>
+          <p>
+            Good coffee, something sweet, and a welcoming place to pause.
+            Your little corner of comfort, right here in Windermere.
+          </p>
+
+          <div class="hero-address">
+            <span>⌖</span>
+            625 Main Street, Windermere, Florida
+          </div>
+
+          <div class="hero-actions">
+            <a href="#menu" class="btn">Explore Our Menu ↗</a>
+            <a href="#location" class="btn btn-outline">Find Your Way Here</a>
+          </div>
+
+          <p class="hero-note">
+            Photography shown throughout this website is illustrative placeholder imagery, not actual photos of Paloma Coffee Co.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO STRIP -->
+    <section class="intro-strip">
+      <div class="container intro-inner">
+        <p>A good cup. A warm welcome. A place to belong.</p>
+        <div class="rating">★★★★★ &nbsp; <strong>4.7 / 5</strong> &nbsp; · &nbsp; 299 reviews</div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Something for every moment</span>
+          <h2>Made for your everyday rituals.</h2>
+          <p>
+            From that first morning coffee to an afternoon treat,
+            there's always something lovely waiting for you.
+          </p>
+        </div>
+
+        <div class="menu-grid">
+
+          <article class="menu-card">
+            <div class="menu-icon">☕</div>
+            <h3>Coffee</h3>
+            <ul>
+              <li>Freshly Brewed Coffee</li>
+              <li>Cold Brew</li>
+              <li>House Coffee</li>
+              <li>Iced Coffee</li>
+            </ul>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">♨</div>
+            <h3>Espresso</h3>
+            <ul>
+              <li>Espresso</li>
+              <li>Americano</li>
+              <li>Cappuccino</li>
+              <li>Vanilla Latte</li>
+            </ul>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">🍵</div>
+            <h3>Tea</h3>
+            <ul>
+              <li>English Breakfast</li>
+              <li>Green Tea</li>
+              <li>Chai Tea Latte</li>
+              <li>Herbal Tea</li>
+            </ul>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">🥐</div>
+            <h3>Baked Goods</h3>
+            <ul>
+              <li>Fresh Croissants</li>
+              <li>Muffins</li>
+              <li>Cookies</li>
+              <li>Sweet Pastries</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <p class="example-note">
+          Menu items above are illustrative examples only, not a confirmed current menu.
+          Please contact the café for actual offerings and availability.
+        </p>
+      </div>
+    </section>
+
+    <!-- COFFEE STORY -->
+    <section class="story-section" id="story">
+      <div class="container story-grid">
+
+        <div class="story-photo">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85"
+            alt="Illustrative placeholder photograph of freshly prepared coffee"
+            loading="lazy"
+          >
+          <span class="photo-label">Illustrative placeholder photo</span>
+        </div>
+
+        <div class="story-copy">
+          <span class="eyebrow">A little something special</span>
+          <h2>Good coffee starts with good company.</h2>
+
+          <p>
+            We believe a really lovely coffee experience is about more
+            than what's in your cup. It's about the care behind it,
+            the people who make it, and the moments it creates.
+          </p>
+
+          <p>
+            That's why we're excited to share something special with
+            our community.
+          </p>
+
+          <div class="roaster-tag">
+            <span>Our coffee announcement</span>
+            <strong>Now serving Haan Coffee</strong>
+          </div>
+
+          <p>
+            Come by, settle in, and discover your next favourite cup.
+            We can't wait to welcome you.
+          </p>
+
+          <a href="#location" class="btn">Come Say Hello ↗</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="community-section" id="community">
+      <div class="container community-grid">
+
+        <div class="community-copy">
+          <span class="eyebrow">More than just coffee</span>
+          <h2>A little place to feel at home.</h2>
+
+          <p>
+            At Paloma Coffee Co., we love the simple things:
+            familiar faces, friendly conversations, a favourite
+            drink made just right, and the smell of something
+            freshly baked.
+          </p>
+
+          <p>
+            We're proud to be part of the Windermere community.
+            Whether you're meeting a friend, taking a moment for
+            yourself, grabbing something on the go, or simply
+            looking for a welcoming place to spend a little time,
+            there's a place for you here.
+          </p>
+
+          <p>
+            Because the best neighbourhood cafés aren't just
+            places to get coffee. They're places where life happens.
+          </p>
+
+          <a href="#contact" class="btn btn-outline">Get in Touch ↗</a>
+        </div>
+
+        <div class="community-photo">
+          <img
+            src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=85"
+            alt="Illustrative placeholder photograph of a cosy neighbourhood café"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+      <p>
+        "Sometimes all you need is a good cup of coffee
+        and a little time to yourself."
+      </p>
+      <span>Slow mornings, Paloma moments</span>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location-section" id="location">
+      <div class="container location-grid">
+
+        <div>
+          <span class="eyebrow">Your next coffee stop</span>
+          <h2>Find us in the heart of Windermere.</h2>
+          <p>
+            Make a little detour, take a little break,
+            and come enjoy a moment at Paloma Coffee Co.
+          </p>
+
+          <br>
+
+          <div class="location-card">
+            <h3>Come on over.</h3>
+
+            <div class="location-line">
+              <strong>Our Address</strong>
+              625 Main Street<br>
+              Windermere, Florida, USA
+            </div>
+
+            <div class="location-line">
+              <strong>Opening Hours</strong>
+              Opening hours: to be confirmed
+            </div>
+
+            <div class="location-line">
+              <strong>What We Serve</strong>
+              Coffee, espresso, tea and baked goods
+            </div>
+
+            <br>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=625+Main+Street+Windermere+Florida"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              Get Directions ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="map-placeholder">
+          <iframe
+            title="Map showing the area around Paloma Coffee Co. at 625 Main Street, Windermere, Florida"
+            src="https://maps.google.com/maps?q=625%20Main%20Street%2C%20Windermere%2C%20Florida&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-copy">
+          <span class="eyebrow">We'd love to hear from you</span>
+          <h2>Let's have a little chat.</h2>
+
+          <p>
+            Questions about our coffee, baked goods, or just want
+            to say hello? Drop us a message. We'd love to hear from you.
+          </p>
+
+          <div class="contact-detail">
+            <strong>Email Us</strong>
+            <a href="mailto:palomacoffee.mgr@gmail.com">
+              palomacoffee.mgr@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-detail">
+            <strong>Visit Us</strong>
+            625 Main Street, Windermere, Florida
+          </div>
+
+          <a
+            href="https://wa.me/1234567890?text=Hello%20Paloma%20Coffee%20Co.%21"
+            class="whatsapp-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>◉</span> Chat with us on WhatsApp
+          </a>
+
+          <p style="font-size:.68rem; margin-top:12px;">
+            WhatsApp number is a placeholder and must be replaced with the café's actual number before publishing.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Send us a message.</h3>
+          <p>Fill in the details below and we'll open WhatsApp with your message ready to send.</p>
+
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="What should we call you?"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Your Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Your contact number"
+              autocomplete="tel"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us what's on your mind..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn">
+            Send via WhatsApp ↗
+          </button>
+
+          <p class="form-note">
+            Your message will be prepared in WhatsApp. You'll need to press Send there to deliver it.
+          </p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-main">
+        <a href="#home" class="footer-logo">
+          Paloma Coffee Co.
+          <small>Coffee · Community · Comfort</small>
+        </a>
+
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#story">Our Coffee</a>
+          <a href="#community">Our Story</a>
+          <a href="#location">Location</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Paloma Coffee Co. All rights reserved.</p>
+        <p>Made with a little love and a lot of coffee. ☕</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    // Close mobile navigation after selecting a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // Contact form opens WhatsApp with prefilled message
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !phone || !message) {
+        alert('Please complete all fields before sending your message.');
+        return;
+      }
+
+      const whatsappNumber = '1234567890';
+
+      const whatsappMessage =
+        `Hello Paloma Coffee Co.!\n\n` +
+        `My name is ${name}.\n` +
+        `My phone number is ${phone}.\n\n` +
+        `My message:\n${message}`;
+
+      const whatsappURL =
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+    });
+
+    // Automatically update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
